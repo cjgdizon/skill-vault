@@ -1,0 +1,13 @@
+{
+  "name": "skill-organizer",
+  "displayName": "Skill Organizer",
+  "version": "1.0.0",
+  "description": "Loads vaulted skills, sibling files, and subagent prompts on demand through a local MCP server to keep session context lean.",
+  "homepage": "https://github.com/cjgdizon/skill-organizer",
+  "repository": "https://github.com/cjgdizon/skill-organizer",
+  "suggestedPrompts": [
+    "List all vaulted packs, exempt plugins, and items awaiting vault approval",
+    "Search the skill vault for debugging, architecture, or code review skills",
+    "Load poteto-mode from the skill vault"
+  ]
+}

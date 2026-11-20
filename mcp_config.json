@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "skill-organizer-vault": {
+      "command": "node",
+      "args": [
+        "C:/Users/Cj/.gemini/config/plugins/skill-organizer/server/index.mjs"
+      ]
+    }
+  }
+}
