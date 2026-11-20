@@ -1,6 +1,6 @@
-# Skill Organizer Vault Rules
+# SkillVault Rules
 
-Use the `skill-organizer-vault` MCP server to load vaulted skills on demand instead of keeping whole plugin packs in session context.
+Use the `skill-vault` MCP server to load vaulted skills on demand instead of keeping whole plugin packs in session context.
 
 ## Searching and Loading Skills
 

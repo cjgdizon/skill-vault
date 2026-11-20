@@ -10,7 +10,7 @@ import {
 } from "./vault.mjs";
 
 const SERVER_INFO = {
-  name: "skill-organizer-vault",
+  name: "skill-vault",
   version: "1.0.0",
 };
 
@@ -331,7 +331,7 @@ function handleMessage(msg) {
       sendError(msg.id, err.code, err.message);
       return;
     }
-    process.stderr.write(`skill-organizer-vault internal error: ${err?.stack || err}\n`);
+    process.stderr.write(`skill-vault internal error: ${err?.stack || err}\n`);
     sendError(msg.id, -32603, err?.message || "Internal error");
   }
 }

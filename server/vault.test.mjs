@@ -40,7 +40,7 @@ function makeFixtureEnv() {
 
   saveConfig(vaultDir, {
     vaultedPlugins: ["pstack"],
-    exemptPlugins: ["ponytail", "skill-organizer", "vercel-plugin"],
+    exemptPlugins: ["ponytail", "skill-vault", "vercel-plugin"],
     customDirs: [customDir],
   });
 
@@ -114,8 +114,8 @@ Delete redundant comments.
     "---\nname: ai-sdk\ndescription: Vercel AI SDK.\n---\n"
   );
   writeFile(
-    path.join(pluginsDir, "skill-organizer", "plugin.json"),
-    '{"name":"skill-organizer"}\n'
+    path.join(pluginsDir, "skill-vault", "plugin.json"),
+    '{"name":"skill-vault"}\n'
   );
 
   // Newly installed plugin (should be pending until approved)
@@ -245,7 +245,7 @@ test("policy boundaries: exempt plugins skipped, new items stay pending until ap
     assert.equal(findSkill(initial, { name: "ponytail" }).ok, false);
     assert.equal(findSkill(initial, { name: "ai-sdk" }).ok, false);
     assert.equal(
-      initial.pending.some((p) => ["ponytail", "vercel-plugin", "skill-organizer"].includes(p.name)),
+      initial.pending.some((p) => ["ponytail", "vercel-plugin", "skill-vault"].includes(p.name)),
       false
     );
 
@@ -268,7 +268,7 @@ test("policy boundaries: exempt plugins skipped, new items stay pending until ap
     assert.equal(findSkill(initial, { name: "standalone-helper" }).ok, false);
 
     // Self-plugin cannot be vaulted
-    assert.throws(() => setVaultPolicy({ vaultDir: env.vaultDir, name: "skill-organizer", policy: "vault" }));
+    assert.throws(() => setVaultPolicy({ vaultDir: env.vaultDir, name: "skill-vault", policy: "vault" }));
 
     // Approve new-plugin -> vault
     setVaultPolicy({ vaultDir: env.vaultDir, name: "new-plugin", policy: "vault" });
@@ -416,7 +416,7 @@ test("end-to-end MCP stdio server handles lifecycle and all 6 tools", async () =
     // 1. initialize + notifications/initialized + ping
     const init = await rpc("initialize", { protocolVersion: "2025-03-26", capabilities: {} });
     assert.equal(init.result.protocolVersion, "2025-03-26");
-    assert.equal(init.result.serverInfo.name, "skill-organizer-vault");
+    assert.equal(init.result.serverInfo.name, "skill-vault");
     notify("notifications/initialized", {});
     const ping = await rpc("ping", {});
     assert.deepEqual(ping.result, {});

@@ -1,9 +1,9 @@
 {
   "mcpServers": {
-    "skill-organizer-vault": {
+    "skill-vault": {
       "command": "node",
       "args": [
-        "C:/Users/Cj/.gemini/config/plugins/skill-organizer/server/index.mjs"
+        "C:/Users/Cj/.gemini/config/plugins/skill-vault/server/index.mjs"
       ]
     }
   }

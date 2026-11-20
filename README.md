@@ -1,12 +1,12 @@
-# Skill Organizer
+# SkillVault
 
-Global Antigravity plugin that indexes vaulted plugins and custom skills on demand through a zero-dependency Node.js stdio MCP server (`skill-organizer-vault`).
+Global Antigravity plugin that indexes vaulted plugins and custom skills on demand through a zero-dependency Node.js stdio MCP server (`skill-vault`).
 
 ## How It Works
 
 - Vault policy lives in `~/.skill-vault/config.json` (`vaultedPlugins`, `exemptPlugins`, `customDirs`).
 - Vaulted plugins (such as `pstack`) are read in place from `~/.gemini/config/plugins/<pack>/` without copying files.
-- Exempt plugins (`ponytail`, `skill-organizer`, `vercel-plugin`) are never indexed or marked pending.
+- Exempt plugins (`ponytail`, `skill-vault`, `vercel-plugin`) are never indexed or marked pending.
 - Newly discovered plugins or standalone skills under `~/.gemini/config/skills/` appear under `pendingApproval` and stay unindexed until the user approves `vault` or `exempt`.
 
 ## MCP Tools
@@ -27,11 +27,11 @@ Drop custom skills into `~/.skill-vault/custom/<skill>/SKILL.md` (pack `custom`)
 Clone into your Antigravity plugins directory and point `mcp_config.json` to your local `server/index.mjs` path:
 
 ```bash
-git clone https://github.com/cjgdizon/skill-organizer.git ~/.gemini/config/plugins/skill-organizer
+git clone https://github.com/cjgdizon/skill-vault.git ~/.gemini/config/plugins/skill-vault
 ```
 
 ## Tests
 
 ```bash
-node --test ~/.gemini/config/plugins/skill-organizer/server/vault.test.mjs
+node --test ~/.gemini/config/plugins/skill-vault/server/vault.test.mjs
 ```

@@ -2,7 +2,7 @@ import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 
-export const SELF_PLUGIN = "skill-organizer";
+export const SELF_PLUGIN = "skill-vault";
 export const DEFAULT_VAULT_DIR = path.join(os.homedir(), ".skill-vault");
 export const DEFAULT_PLUGINS_DIR = path.join(os.homedir(), ".gemini", "config", "plugins");
 export const DEFAULT_GLOBAL_SKILLS_DIR = path.join(os.homedir(), ".gemini", "config", "skills");
